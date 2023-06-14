@@ -35,7 +35,12 @@ def decode_char(char)
 end
 end
 
-puts decode_char(".--")
 
 
+def decode_word (*chars)
+mapped_char = chars.map {|char| decode_char(char)}
+mapped_char.join
+end
+
+puts decode_word("-..", "---")
 
