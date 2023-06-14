@@ -35,12 +35,15 @@ def decode_char(char)
 end
 end
 
-
-
 def decode_word (chars)
 mapped_char = chars.split.map {|char| decode_char(char)}
 mapped_char.join
 end
 
-puts decode_word("-.. ---")
+def decode_message (words)
+mapped_message = words.split("  ").map {|char| decode_word(char)}
+mapped_message.join(" ")
+end
+
+puts decode_message(".-   -... --- -..-   ..-. ..- .-.. .-..   --- ..-.   .-. ..- -... .. . ...")
 
